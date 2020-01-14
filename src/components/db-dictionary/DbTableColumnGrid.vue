@@ -34,10 +34,10 @@
             <el-col :span="24">
                 <vxe-table
                         border
-                        show-overflow
                         ref="xTable"
                         class="my_table_status"
                         :data="tableData"
+                        auto-resize="true"
                         :edit-rules="validRules"
                         :edit-config="{trigger: 'click', mode: 'cell', showStatus: true,showIcon:false, activeMethod: activeCellMethod}">
                     <vxe-table-column type="checkbox" width="60"></vxe-table-column>

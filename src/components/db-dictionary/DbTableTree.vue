@@ -324,6 +324,9 @@
                     resolve(data);
                     //加载后定位节点操作
                     data.forEach((value, index, array)=>{
+                        if(value.type=="db"){
+                            this.expandNodes.push(value.nodeId);
+                        }
                         //console.log(this.currentKey===value["nodeId"])
                         if(this.currentKey===value["nodeId"]){
                             this.$refs.dbTableTree.setCurrentKey(this.currentKey);

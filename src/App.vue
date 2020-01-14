@@ -21,10 +21,10 @@
           </el-aside>
         </el-col>
         <el-col :span="19" :xs="19" :sm="19" :md="19" :lg="19" :xl="19">
-          <el-container>
+          <el-container >
             <el-main>
               <!--右侧选项卡页面-->
-              <el-tabs v-model="editableTabsValue" type="card" closable @tab-remove="removeTab" @tab-click="tabClick" class="dbTableTabs">
+              <el-tabs v-show="editableTabs.length>0" v-model="editableTabsValue" type="card" closable @tab-remove="removeTab" @tab-click="tabClick" class="dbTableTabs">
                 <el-tab-pane
                         v-for="(item) in editableTabs"
                         :key="item.index"
@@ -35,7 +35,9 @@
 
                 </el-tab-pane>
               </el-tabs>
+              <WelComePage v-show="editableTabs.length==0"></WelComePage>
             </el-main>
+
           </el-container>
         </el-col>
       </el-row>
@@ -48,9 +50,9 @@
   import ElCol from "element-ui/packages/col/src/col";
   import DbTableColumnGrid from "./components/db-dictionary/DbTableColumnGrid";
   import DbTableTree from "./components/db-dictionary/DbTableTree";
-
+  import WelComePage from "./components/db-dictionary/WelComePage";
   export default {
-    components: {DbTableTree, ElCol,DbTableColumnGrid },
+    components: {DbTableTree, ElCol,DbTableColumnGrid,WelComePage },
     data() {
       return {
         editableTabsValue: '0',

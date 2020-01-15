@@ -343,9 +343,9 @@
             refreshNode(pid,type){
                 //刷新指定子节点
                 this.getNodeByPid(pid,type).then(data=>{
-
                     this.$refs.dbTableTree.updateKeyChildren(pid,data);
                     this.$forceUpdate();
+                    this.expandNodes.push(pid);
                 });
             },
             //打卡导入表窗口

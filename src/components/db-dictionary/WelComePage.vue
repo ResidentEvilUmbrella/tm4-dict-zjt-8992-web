@@ -19,7 +19,7 @@
                                     fit="fill"
                             >
                             </el-image>-->
-                            <img :src="item" /></el-carousel-item>
+                            <img :src="item"  style="width:100%;height: 100%" /></el-carousel-item>
                     </el-carousel>
             </el-main>
         </el-container>

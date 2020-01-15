@@ -35,7 +35,7 @@
 
                 </el-tab-pane>
               </el-tabs>
-              <WelComePage v-show="editableTabs.length==0"></WelComePage>
+              <WelComePage v-show="editableTabs.length==0" style="width: 100%;height: 100%;"></WelComePage>
             </el-main>
 
           </el-container>

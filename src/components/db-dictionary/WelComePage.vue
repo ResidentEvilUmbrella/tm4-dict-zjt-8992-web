@@ -2,20 +2,24 @@
     <div class="welComePageContainer" >
         <el-container>
             <el-header class="welComePagTitle">
-                <i class="fa fa-lightbulb-o" style="color: #ffc800" />
-                数据库字典功能使用教程
+               <!-- <i class="fa fa-lightbulb-o" style="color: #ffc800" />-->
+               <img src="../../assets/bulb.png"  class="titleClass" />
+                <div>数据库字典功能使用教程</div>
+
+
             </el-header>
+
             <el-main style="padding-top: 0px">
                 <!-- :height="dataHeight" style="max-height: 1080px;min-height: 900px;max-width: 1920px;min-width: 1300px;" -->
-                    <el-carousel interval="5000" indicator-position="outside"  id="el-carousel" :height="dataHeight"  style="width: 100%;margin-top:5vh;" >
+                    <el-carousel :interval="5000" indicator-position="outside"  id="el-carousel" :height="dataHeight"  style="width: 100%;margin-top:5vh;" >
                         <el-carousel-item v-for="(item,index) in srcList" :key="index"  :label="index+1" >
-                            <el-image
+                           <!-- <el-image
                                     :src="item"
                                     style="width:100%;height: 100%"
                                     fit="fill"
                             >
-                            </el-image>
-                        </el-carousel-item>
+                            </el-image>-->
+                            <img :src="item" /></el-carousel-item>
                     </el-carousel>
             </el-main>
         </el-container>
@@ -93,11 +97,15 @@
 }
 
 .welComePagTitle {
-    font-family: 华文行楷;
+    font-family: 微软雅黑;
     color: #009eff;
-    font-size:3vw;
+    font-size:2vw;
     margin-top: 5vh;
-
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center;     /* 垂直居中 */
+    width: 100%;
+    height: 100%;
 }
 
 .el-carousel__container{
@@ -109,8 +117,12 @@ img{
     height: auto;
     max-width: 100%;
     max-height: 100%;
+    display: inline;
 }
-.el-carousel__arrow{
-    
+.titleClass{
+    padding: 0px;
+    width:2.5vw;
+    height:3vw;
+    margin-right:15px;
 }
 </style>
